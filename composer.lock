@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c07c18ce9ade2ae43f28c5b049dde25",
+    "content-hash": "a771a2e9e4d6915f630da33959bc5b4b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1403,6 +1403,67 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/feeds",
                 "issues": "https://www.drupal.org/project/issues/feeds"
+            }
+        },
+        {
+            "name": "drupal/filefield_sources",
+            "version": "dev-2.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/filefield_sources.git",
+                "reference": "642a01f04ed1ab7285909cdcf9c0fe7801176dce"
+            },
+            "require": {
+                "drupal/core": "^10.2.0 | ^11"
+            },
+            "require-dev": {
+                "drupal/imce": "^3.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.0.x": "2.0.x-dev"
+                },
+                "drupal": {
+                    "version": "2.0.x-dev",
+                    "datestamp": "1765898278",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nate Lampton (quicksketch)",
+                    "homepage": "https://www.drupal.org/u/quicksketch",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Andrey Khromyshev (profak)",
+                    "homepage": "https://www.drupal.org/u/profak",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "David Valdez (gnuget)",
+                    "homepage": "https://www.drupal.org/u/gnuget",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "quicksketch",
+                    "homepage": "https://www.drupal.org/user/35821"
+                }
+            ],
+            "description": "Extends File fields to allow referencing of existing files, remote files, and server files.",
+            "homepage": "https://www.drupal.org/project/filefield_sources",
+            "support": {
+                "source": "https://git.drupalcode.org/project/filefield_sources",
+                "issues": "https://www.drupal.org/project/issues/filefield_sources",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
         {
@@ -6465,7 +6526,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "drupal/filefield_sources": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
