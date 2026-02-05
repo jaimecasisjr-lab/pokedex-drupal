@@ -1459,6 +1459,59 @@
             "install-path": "../../web/modules/contrib/feeds"
         },
         {
+            "name": "drupal/file_field_download",
+            "version": "dev-1.0.x",
+            "version_normalized": "dev-1.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/file_field_download.git",
+                "reference": "42ce3629196c6907e73689a0305bf2abf4bc436b"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10 || ^11",
+                "pclzip/pclzip": "^2.8"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
+                "drupal": {
+                    "version": "1.0.x-dev",
+                    "datestamp": "1744847186",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "installation-source": "source",
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "anilu@",
+                    "homepage": "https://www.drupal.org/user/3489541"
+                },
+                {
+                    "name": "jborgesr",
+                    "homepage": "https://www.drupal.org/user/2790317"
+                },
+                {
+                    "name": "ruby232",
+                    "homepage": "https://www.drupal.org/user/2604126"
+                }
+            ],
+            "description": "Provides a download-all-files field type",
+            "homepage": "https://www.drupal.org/project/file_field_download",
+            "support": {
+                "source": "https://git.drupalcode.org/project/file_field_download"
+            },
+            "install-path": "../../web/modules/contrib/file_field_download"
+        },
+        {
             "name": "drush/drush",
             "version": "13.7.1",
             "version_normalized": "13.7.1.0",
@@ -2667,6 +2720,50 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v5.7.0"
             },
             "install-path": "../nikic/php-parser"
+        },
+        {
+            "name": "pclzip/pclzip",
+            "version": "2.8.2",
+            "version_normalized": "2.8.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ivanlanin/pclzip.git",
+                "reference": "19dd1de9d3f5fc4d7d70175b4c344dee329f45fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ivanlanin/pclzip/zipball/19dd1de9d3f5fc4d7d70175b4c344dee329f45fd",
+                "reference": "19dd1de9d3f5fc4d7d70175b4c344dee329f45fd",
+                "shasum": ""
+            },
+            "time": "2014-06-05T11:42:24+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "pclzip.lib.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Vincent Blavet"
+                }
+            ],
+            "description": "A PHP library that offers compression and extraction functions for Zip formatted archives",
+            "homepage": "http://www.phpconcept.net/pclzip",
+            "keywords": [
+                "php",
+                "zip"
+            ],
+            "support": {
+                "issues": "https://github.com/ivanlanin/pclzip/issues",
+                "source": "https://github.com/ivanlanin/pclzip/tree/master"
+            },
+            "install-path": "../pclzip/pclzip"
         },
         {
             "name": "pear/archive_tar",

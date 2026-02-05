@@ -3,7 +3,7 @@
         'name' => 'drupal/recommended-project',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '54934b76c516d014dc5b7f5a8649d39fb62c6cb3',
+        'reference' => 'f6ab22b1704e5d6e937fb6a3a03041fd89422cf4',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -334,10 +334,21 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/file_field_download' => array(
+            'pretty_version' => 'dev-1.0.x',
+            'version' => 'dev-1.0.x',
+            'reference' => '42ce3629196c6907e73689a0305bf2abf4bc436b',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/file_field_download',
+            'aliases' => array(
+                0 => '1.0.x-dev',
+            ),
+            'dev_requirement' => false,
+        ),
         'drupal/recommended-project' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '54934b76c516d014dc5b7f5a8649d39fb62c6cb3',
+            'reference' => 'f6ab22b1704e5d6e937fb6a3a03041fd89422cf4',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -484,6 +495,15 @@
                 0 => '~2.0',
             ),
         ),
+        'pclzip/pclzip' => array(
+            'pretty_version' => '2.8.2',
+            'version' => '2.8.2.0',
+            'reference' => '19dd1de9d3f5fc4d7d70175b4c344dee329f45fd',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pclzip/pclzip',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'pear/archive_tar' => array(
             'pretty_version' => '1.6.0',
             'version' => '1.6.0.0',
@@ -568,8 +588,8 @@
         'psr/container-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.1|2.0',
-                1 => '^1.0',
+                0 => '^1.0',
+                1 => '1.1|2.0',
             ),
         ),
         'psr/event-dispatcher' => array(
