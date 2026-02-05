@@ -1,0 +1,82 @@
+ 
+ .breadcrumb__list { /*Home buttom*/
+    font-size: larger;
+    color:rgba(194, 159, 58); 
+
+ }
+ .main-content__container {
+    background-color:#444;
+ }
+ .region--content { /*This is region container for the Pokedex Container*/
+    background-color:#444;
+}
+
+.view-header h2 { /*Header title "Typed Pokedex" */
+    color:rgba(194, 159, 58);
+    padding-top: 5%;
+    font-weight: normal;
+    font-family:Bradley Hand, cursive;
+    text-align: center;
+    font-size:300%;
+}
+
+.Pokedex-list .views-view-responsive-grid__item { /*this is the grid items of each pokemon*/
+    position: relative;
+    background-color: #444444;
+    padding-top: 40px;
+    text-align: center;     /* Centers Name, Image, and Height */
+    padding-top: 40px;      /* Space at the top so ID doesn't overlap image */
+    border-top: 3px solid rgba(95, 90, 71);
+    border-bottom: 3px solid rgba(95, 90, 71);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px 2px rgba(19, 18, 18, 0.6);
+    /* Optional: Lift the card slightly by default to help the visual */
+    margin-bottom: 25px;
+
+}
+.Pokedex-list .views-field-field-id { /*CSS for the id of each pokemons*/
+    font-style: italic;
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    font-weight: bold;
+    font-size: 0.6rem;
+    color: #444;
+    background: rgba(207, 191, 124);
+    padding: 0px 4px;
+  
+  /* This creates the parallelogram/leaf effect in the background for the id*/
+  border-radius: 13px 0 15px 0; 
+
+}
+.Pokedex-list .pokedex-height-wrapper { /*This css is for the height label and the heighr value*/
+  font-family: 'Bradley Hand', cursive; 
+  color: rgba(194, 159, 58);
+  font-size: 0.6rem;
+  text-align: center;
+}
+.Pokedex-list .views-view-responsive-grid__item a {
+    color: white;            
+    text-decoration: none;      /* Removes the default underline */
+    font-family: 'Bradley Hand', cursive; 
+    font-size: 0.5rem;
+    font-weight: bold;
+    display: block;             /* Makes it sit on its own line */
+    margin-top: 10px;
+    transition: color 0.3s ease;
+
+}
+@media (min-width: 768px) {
+  .Pokedex-list .views-view-responsive-grid__item a {
+    font-size: 1.1rem;
+  }
+  .Pokedex-list .pokedex-height-wrapper {
+    font-size:1.1rem;
+  }
+  .Pokedex-list .views-field-field-id {
+    top: -38px;
+    font-size: 1.1rem;
+     padding: 0px 15px;
+  }
+}
+
