@@ -1,0 +1,19 @@
+uuid: fb7b3aae-cfaa-4d61-8c52-8448c43a3fac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_height
+    - node.type.pokedex
+id: node.pokedex.field_height
+field_name: field_height
+entity_type: node
+bundle: pokedex
+label: Height
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

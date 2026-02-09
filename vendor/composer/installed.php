@@ -3,7 +3,7 @@
         'name' => 'drupal/recommended-project',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f6ab22b1704e5d6e937fb6a3a03041fd89422cf4',
+        'reference' => 'bc26404972d643bac33e6ed49aff6b19e5f4a817',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -334,21 +334,21 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'drupal/file_field_download' => array(
-            'pretty_version' => 'dev-1.0.x',
-            'version' => 'dev-1.0.x',
-            'reference' => '42ce3629196c6907e73689a0305bf2abf4bc436b',
+        'drupal/filefield_sources' => array(
+            'pretty_version' => 'dev-2.0.x',
+            'version' => 'dev-2.0.x',
+            'reference' => '642a01f04ed1ab7285909cdcf9c0fe7801176dce',
             'type' => 'drupal-module',
-            'install_path' => __DIR__ . '/../../web/modules/contrib/file_field_download',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/filefield_sources',
             'aliases' => array(
-                0 => '1.0.x-dev',
+                0 => '2.0.x-dev',
             ),
             'dev_requirement' => false,
         ),
         'drupal/recommended-project' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f6ab22b1704e5d6e937fb6a3a03041fd89422cf4',
+            'reference' => 'bc26404972d643bac33e6ed49aff6b19e5f4a817',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -494,15 +494,6 @@
             'replaced' => array(
                 0 => '~2.0',
             ),
-        ),
-        'pclzip/pclzip' => array(
-            'pretty_version' => '2.8.2',
-            'version' => '2.8.2.0',
-            'reference' => '19dd1de9d3f5fc4d7d70175b4c344dee329f45fd',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../pclzip/pclzip',
-            'aliases' => array(),
-            'dev_requirement' => false,
         ),
         'pear/archive_tar' => array(
             'pretty_version' => '1.6.0',

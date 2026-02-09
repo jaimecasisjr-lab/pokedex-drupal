@@ -1,0 +1,59 @@
+uuid: a0a65881-29da-42b4-8822-7594a087d679
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.pokedex.field_height
+    - field.field.node.pokedex.field_id
+    - field.field.node.pokedex.field_pokemon_type
+    - field.field.node.pokedex.field_sprite
+    - node.type.pokedex
+  module:
+    - image
+    - user
+id: node.pokedex.default
+targetEntityType: node
+bundle: pokedex
+mode: default
+content:
+  field_height:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_pokemon_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_sprite:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
