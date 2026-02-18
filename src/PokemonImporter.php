@@ -6,7 +6,6 @@ use PokePHP\PokeApi;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\file\FileRepositoryInterface;
-use Drupal\taxonomy\Entity\Term; // <--- Crucial for creating terms
 
 class PokemonImporter {
 
@@ -26,30 +25,6 @@ class PokemonImporter {
 
       $storage = $this->entityTypeManager->getStorage('node');
       $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
-
-      // 1. Process Types (Taxonomy)
-      $types_ids = [];
-      foreach ($data['types'] as $type_info) {
-        $type_name = ucfirst($type_info['type']['name']);
-        
-        // Look for existing term in 'pokemon_types' vocabulary
-        $existing_terms = $term_storage->loadByProperties([
-          'name' => $type_name,
-          'vid' => 'pokemon_types',
-        ]);
-
-        if (empty($existing_terms)) {
-          $term = Term::create([
-            'name' => $type_name,
-            'vid' => 'pokemon_types',
-          ]);
-          $term->save();
-          $types_ids[] = $term->id();
-        } else {
-          $term = reset($existing_terms);
-          $types_ids[] = $term->id();
-        }
-      }
 
       // 2. Process Sprite Image
       $file_id = NULL;
@@ -82,8 +57,6 @@ class PokemonImporter {
           'target_id' => $file_id,
           'alt' => $data['name'],
         ],
-        'field_pokemon_types' => $types_ids, // <--- Linking the terms here
-        'status' => 1,
       ];
 
       if (empty($existing_nodes)) {

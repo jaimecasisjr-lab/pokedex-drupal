@@ -8,3 +8,12 @@ services:
     arguments: ['@pokemon_harvest.importer']
     tags:
       - { name: drush.command }
+  
+  type_importer.commands:
+    class: Drupal\pokemon_harvest\Drush\Commands\TypeImporter
+    arguments: ['@entity_type.manager']
+    tags:
+      - {name: drush.command}
+
+
+  
