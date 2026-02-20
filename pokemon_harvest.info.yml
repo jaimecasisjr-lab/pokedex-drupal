@@ -1,7 +1,0 @@
-name: 'Pokemon Harvest'
-type: module
-description: 'Harvests the original 151 Pokemon into Drupal content.'
-package: Custom
-core_version_requirement: ^10 || ^11
-dependencies:
-  - drupal:node

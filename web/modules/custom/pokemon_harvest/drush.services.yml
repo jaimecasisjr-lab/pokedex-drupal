@@ -1,0 +1,19 @@
+services:
+  pokemon_harvest.importer:
+    class: Drupal\pokemon_harvest\PokemonImporter
+    arguments: ['@entity_type.manager', '@file.repository'] # <-- Add @file.repository here
+
+  pokemon_harvest.commands:
+    class: Drupal\pokemon_harvest\Drush\Commands\PokemonHarvestCommands
+    arguments: ['@pokemon_harvest.importer']
+    tags:
+      - { name: drush.command }
+  
+  type_importer.commands:
+    class: Drupal\pokemon_harvest\Drush\Commands\TypeImporter
+    arguments: ['@entity_type.manager']
+    tags:
+      - {name: drush.command}
+
+
+  
