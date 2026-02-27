@@ -1,4 +1,9 @@
 global-styling:
   css:
     theme:
+<<<<<<< HEAD
       css/style.css: {}
+      css_final_Pokedex/pokedexSpecial.css: {}
+=======
+      css/style.css: {}
+>>>>>>> c0a4d3762d19686026bec4cd8893f69258fdb4a1

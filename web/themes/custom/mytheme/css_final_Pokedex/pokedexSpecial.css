@@ -1,0 +1,207 @@
+/* --- Global Containers --- */
+.breadcrumb__list { 
+    font-size: larger;
+    color: rgba(194, 159, 58); 
+}
+.main-content__container {
+    background-color: #4b5050;
+}
+.region--content { 
+    background-color: #4b5050;
+}
+
+.view-header h2 { 
+    color: rgb(243, 239, 0);
+    padding-top: 5%;
+    font-weight: normal;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size: 200%;
+    
+    /* --- Text Outline Settings --- */
+    -webkit-text-stroke: 3px rgba(27, 95, 223, 0.8); /* Width and Color */
+   
+}
+.pokedex-special .views-view-responsive-grid__item  {
+    position: relative;
+     font-size: 1.4rem;
+    background-color: #cfc7c7;
+    text-align: center;
+    /* 1. Make the container bigger by increasing padding */
+    padding: 20px 10px; /* Top/Bottom, Left/Right */
+    border-top: 3px solid rgb(77, 76, 76);
+    border-bottom: 3px solid rgb(73, 72, 72);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px 2px rgba(10, 10, 10, 0.6);
+    margin-bottom: 25px;
+    overflow: hidden;
+
+    /* 2. Center content using Flexbox */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    
+    /* 3. Ensure uniform sizing if desired */
+    min-height: 300px; 
+}
+/* Target the image inside the card */
+.pokedex-special .views-view-responsive-grid__item img {
+    width: 120%;       /* Makes image span the width of the card */
+    height:auto;      /* Maintains aspect ratio */
+    max-width: 180px;  /* Adjust this value to your preferred "large" size */
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect below */
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3)); /* Adds depth to the Pokémon */
+}
+
+/* Optional: Add a slight zoom effect when hovering over the card */
+.pokedex-special .views-view-responsive-grid__item:hover img {
+    transform: scale(1.3);
+}
+
+/* --- DYNAMIC TAXONOMY COLORS --- */
+/* These rules look for the type class you added in the field style settings */
+
+/* Grass */
+.pokedex-special .views-view-responsive-grid__item:has(.type-grass) {
+    background: linear-gradient(145deg, #a7db8d, #78C850) !important;
+    border-top-color: #5ca935;
+}
+
+/* Fire */
+.pokedex-special .views-view-responsive-grid__item:has(.type-fire) {
+    background: linear-gradient(145deg, #f5ac78, #F08030) !important;
+    border-top-color: #c4601a;
+}
+
+/* Water */
+.pokedex-special .views-view-responsive-grid__item:has(.type-water) {
+    background: linear-gradient(145deg, #a2baf3, #406acc) !important;
+    border-top-color: #4a6ec2;
+}
+
+/* Bug */
+.pokedex-special .views-view-responsive-grid__item:has(.type-bug) {
+    background: linear-gradient(145deg, #c6d16e, #A8B820) !important;
+    border-top-color: #828f1a;
+}
+
+/* Poison */
+.pokedex-special .views-view-responsive-grid__item:has(.type-poison) {
+    background: linear-gradient(145deg, #c183c1, #A040A0) !important;
+    border-top-color: #803380;
+}
+
+/* Electric */
+.pokedex-special .views-view-responsive-grid__item:has(.type-electric) {
+    background: linear-gradient(145deg, #fff2bf, #f8cd22) !important;
+    border-top-color: #c1a11a;
+}
+
+/* Ground */
+.pokedex-special .views-view-responsive-grid__item:has(.type-ground) {
+    background: linear-gradient(145deg, #f8e1a0, #a3883f) !important;
+    border-top-color: #b39a53;
+}
+
+/* Psychic */
+.pokedex-special .views-view-responsive-grid__item:has(.type-psychic) {
+    background: linear-gradient(145deg, #f0b5c7, #f14e7f) !important;
+    border-top-color: #c1456a;
+}
+
+/* Rock */
+.pokedex-special .views-view-responsive-grid__item:has(.type-rock) {
+    background: linear-gradient(145deg, #dddddb, #5e5d5a) !important;
+    border-top-color: #8f7d2b;
+}
+
+/* Ghost */
+.pokedex-special .views-view-responsive-grid__item:has(.type-ghost) {
+    background: linear-gradient(145deg, #a292bc, #705898) !important;
+    border-top-color: #554374;
+}
+/*flying*/
+.pokedex-special .views-view-responsive-grid__item:has(.type-flying) {
+    background: linear-gradient(145deg, #c4f8fc, #33dbf8) !important;
+    border-top-color: #554374;
+}
+/*flying*/
+.pokedex-special .views-view-responsive-grid__item:has(.type-fairy) {
+    background: linear-gradient(145deg, #f2a2f5, #f757e9) !important;
+    border-top-color: #554374;
+}
+
+/* Ice */
+.pokedex-special .views-view-responsive-grid__item:has(.type-ice) {
+    background: linear-gradient(145deg, #bce6e6, #98D8D8) !important;
+    border-top-color: #76a8a8;
+}
+
+/* Dragon */
+.pokedex-special .views-view-responsive-grid__item:has(.type-dragon) {
+    background: linear-gradient(145deg, #a27dfa, #7038F8) !important;
+    border-top-color: #552bb3;
+}
+
+/* Normal */
+.pokedex-special .views-view-responsive-grid__item:has(.type-normal) {
+    background: linear-gradient(145deg, #c6c6a7, #A8A878) !important;
+    border-top-color: #82825d;
+}
+/* --- Card Content --- */
+.pokedex-special .views-field-field-id { 
+    font-style: italic;
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    font-weight: bold;
+    font-size: 0.6rem;
+    color: #3b3737;
+    background: rgb(255, 255, 255);
+    padding: 0px 4px;
+    border-radius: 13px 0 15px 0; 
+    z-index: 10;
+}
+
+.pokedex-special .views-view-responsive-grid__item a {
+    color: rgb(249, 248, 250);
+    text-decoration: none;
+    font-family: 'Bradley Hand', cursive; 
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    /* --- Changes to show all text --- */
+    font-size: clamp(0.7rem, 2vw, 1.1rem); /* Increased minimum floor, lowered max for balance */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pokedex-special .pokedex-height-wrapper { 
+    font-family: 'Times New Roman', Times, serif; 
+    color: white; 
+    font-size: clamp(0.65rem, 1.8vw, 1.0rem);
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+    /* --- The Fixes --- */
+    white-space: nowrap;  /* Forces text to stay on one line */
+    overflow: visible;    /* Ensures text doesn't vanish if it hits the edge */
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+    .pokedex-special .views-field-field-id {
+        top: -3px;
+        font-size: 1.1rem;
+        padding: 0px 15px;
+    }
+    .view-header {
+      font-size: 250%;
+      -webkit-text-stroke: 5px rgba(27, 95, 223, 0.8); /* Width and Color */
+      
+    }
+}
