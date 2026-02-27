@@ -5,8 +5,4 @@ core_version_requirement: ^10
 base theme: olivero
 
 libraries:
-<<<<<<< HEAD
   - mytheme/global-styling
-=======
-  - mytheme/global-styling
->>>>>>> c0a4d3762d19686026bec4cd8893f69258fdb4a1
