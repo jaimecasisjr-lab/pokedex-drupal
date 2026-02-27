@@ -18,13 +18,33 @@ class PokemonImporter {
     $api = new PokeApi();
     $count = 0;
 
+    //Intialize the storage not before loop
+    $storage = $this->entityTypeManager->getStorage('node');
+    $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
+
     for ($i = 1; $i <= 151; $i++) {
       $response = $api->pokemon($i);
       $data = json_decode($response, TRUE);
       if (!$data) continue;
 
-      $storage = $this->entityTypeManager->getStorage('node');
-      $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
+      // 1. Process Taxonomy Terms (Fetching the IDs)
+      $tids = [];
+      if (!empty($data['types'])) {
+        foreach ($data['types'] as $type_item) {
+          $api_type_name = ucfirst($type_item['type']['name']);
+          $matching_terms = $term_storage->loadByProperties([
+            'vid' => 'pokemon_types',
+            'name' => $api_type_name,
+          ]);
+
+          if (!empty($matching_terms)) {
+            $term = reset($matching_terms);
+            
+            
+            $tids[] = ['target_id' => $term->id()];
+          }
+        }
+      }
 
       // 2. Process Sprite Image
       $file_id = NULL;
@@ -41,23 +61,24 @@ class PokemonImporter {
           $file_id = $file->id();
         }
       }
-
-      // 3. Create or Update Node
-      $existing_nodes = $storage->loadByProperties([
-        'type' => 'pokedex',
-        'field_id' => $data['id'],
-      ]);
-
+      // 3. Prepare Node Values
       $node_values = [
         'type' => 'pokedex',
         'title' => ucfirst($data['name']),
         'field_id' => $data['id'],
         'field_height' => $data['height'],
+        'field_pokemon_type' => $tids, //this line assign the fetched taxonomy term IDs
         'field_sprite' => [
           'target_id' => $file_id,
           'alt' => $data['name'],
         ],
       ];
+
+      // 4. Create or Update Node
+      $existing_nodes = $storage->loadByProperties([
+        'type' => 'pokedex',
+        'field_id' => $data['id'],
+      ]);
 
       if (empty($existing_nodes)) {
         $node = $storage->create($node_values);
