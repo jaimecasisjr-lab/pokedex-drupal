@@ -39,8 +39,8 @@ class PokemonImporter {
 
           if (!empty($matching_terms)) {
             $term = reset($matching_terms);
-            
-            
+
+
             $tids[] = ['target_id' => $term->id()];
           }
         }
@@ -54,8 +54,8 @@ class PokemonImporter {
         if ($image_data) {
           $filename = 'pokemon-' . $data['id'] . '.png';
           $file = $this->fileRepository->writeData(
-            $image_data, 
-            "public://$filename", 
+            $image_data,
+            "public://$filename",
             FileSystemInterface::EXISTS_REPLACE
           );
           $file_id = $file->id();
@@ -65,7 +65,7 @@ class PokemonImporter {
       $node_values = [
         'type' => 'pokedex',
         'title' => ucfirst($data['name']),
-        'field_id' => $data['id'],
+        'field_id' => (int)$data['id'],
         'field_height' => $data['height'],
         'field_pokemon_type' => $tids, //this line assign the fetched taxonomy term IDs
         'field_sprite' => [
@@ -90,7 +90,7 @@ class PokemonImporter {
           }
         }
       }
-      
+
       $node->save();
       $count++;
     }
