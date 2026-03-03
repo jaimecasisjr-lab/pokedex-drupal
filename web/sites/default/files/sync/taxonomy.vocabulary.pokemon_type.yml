@@ -1,9 +1,0 @@
-uuid: a6f8cc0e-b090-4540-a57d-eeffb5fe6ee8
-langcode: en
-status: true
-dependencies: {  }
-name: 'Pokemon Type'
-vid: pokemon_type
-description: null
-weight: 0
-new_revision: false

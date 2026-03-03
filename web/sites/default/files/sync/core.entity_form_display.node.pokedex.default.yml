@@ -33,11 +33,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_id:
-    type: string_textfield
-    weight: 122
+    type: number
+    weight: 126
     region: content
     settings:
-      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_pokemon_type:

@@ -6,7 +6,6 @@ dependencies:
     - filter.format.restricted_html
   module:
     - comment
-    - file_field_download
     - filter
     - search
     - system
