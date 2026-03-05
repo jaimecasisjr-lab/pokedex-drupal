@@ -1,0 +1,5 @@
+services:
+  pokemon_search.commands:
+    class: \Drupal\pokemon_search\Drush\Commands\PokemonSearchCommands
+    tags:
+      - { name: drush.command }
