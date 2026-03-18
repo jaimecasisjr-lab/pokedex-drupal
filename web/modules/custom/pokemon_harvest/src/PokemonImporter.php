@@ -6,12 +6,14 @@ use PokePHP\PokeApi;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\file\FileRepositoryInterface;
+use GuzzleHttp\ClientInterface;
 
 class PokemonImporter {
 
   public function __construct(
     protected EntityTypeManagerInterface $entityTypeManager,
-    protected FileRepositoryInterface $fileRepository
+    protected FileRepositoryInterface $fileRepository,
+    protected ClientInterface $httpClient
   ) {}
 
   public function harvestGen1() {
@@ -61,11 +63,65 @@ class PokemonImporter {
           $file_id = $file->id();
         }
       }
+      // 2.5 Extract Stats
+      $hp_value = $data['stats'][0]['base_stat'];     // HP is always index 0
+      $attack_value = $data['stats'][1]['base_stat']; // Attack is always index 1
+
+      $description = '';
+      $prev_evo = ''; // Initialize variables
+      $next_evo = '';
+      try {
+        $species_response = $this->httpClient->get("https://pokeapi.co/api/v2/pokemon-species/" . $data['id']);
+        $species_data = json_decode($species_response->getBody(), TRUE);
+
+        if (!empty($species_data['flavor_text_entries'])) {
+          foreach ($species_data['flavor_text_entries'] as $entry) {
+            if ($entry['language']['name'] == 'en') {
+              $description = str_replace(["\n", "\f", "\r"], " ", $entry['flavor_text']);
+              break; 
+            }
+          }
+        }
+        //Evolution LOGIC
+        // 1. Get Pre-evolution
+        if (!empty($species_data['evolves_from_species'])) {
+          $prev_evo = ucfirst($species_data['evolves_from_species']['name']);
+        }
+
+        // 2. Get Next-evolution 
+        if (!empty($species_data['evolution_chain']['url'])) {
+          $evo_url = $species_data['evolution_chain']['url'];
+          $evo_response = $this->httpClient->get($evo_url);
+          $evo_data = json_decode($evo_response->getBody(), TRUE);
+
+          $current_name = $data['name'];
+          $chain = $evo_data['chain'];
+
+          // Move through the chain until we find the current Pokemon
+          while ($chain && $chain['species']['name'] !== $current_name) {
+            $chain = $chain['evolves_to'][0] ?? null;
+          }
+          
+          // If we found it and there is a next step, grab the name
+          if ($chain && !empty($chain['evolves_to'])) {
+            $next_evo = ucfirst($chain['evolves_to'][0]['species']['name']);
+          }
+        }
+      } catch (\Exception $e) {
+        // Handle potential API failure for specific species
+        \Drupal::logger('pokemon_harvest')->error('Failed to fetch description for ID ' . $data['id']);
+      }
+          
       // 3. Prepare Node Values
       $node_values = [
         'type' => 'pokedex',
         'title' => ucfirst($data['name']),
         'field_id' => (int)$data['id'],
+        'field_hp' => $hp_value,     // Map to hp field
+        'field_power' => $attack_value, // Map to attack field
+        'field_description' => $description, //description for the pokemon
+        'field_evolves_from' => $prev_evo, //PREV EVOLUTION
+        'field_evolves_into' => $next_evo, //NEXT EVOL
         'field_height' => $data['height'],
         'field_pokemon_type' => $tids, //this line assign the fetched taxonomy term IDs
         'field_sprite' => [
