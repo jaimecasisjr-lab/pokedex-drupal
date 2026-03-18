@@ -1,0 +1,98 @@
+{# node--pokedex.html.twig #}
+<article{{ attributes.addClass('pokedex-modern-card') }}>
+  
+  {# Top Header Bar #}
+  <header class="pokedex-header-bar type-{{ node.field_pokemon_type.entity.label|lower|clean_class }}">
+    <div class="pokedex-id-badge">
+      No. {{ content.field_id.0|render|striptags|trim }}
+    </div>
+    
+    <div class="pokedex-header-main">
+      <h2 class="pokemon-name-title">{{ label }}</h2>
+      
+      <div class="header-stats">
+        <div class="hp-section">
+          <span class="hp-label">🔋: {{ content.field_hp.0 }}</span>
+          <div class="hp-bar-wrapper">
+            <div class="hp-bar-fill" style="width: {{ content.field_hp.0|render|striptags|trim }}%;"></div>
+          </div>
+        </div>
+        <div class="pwr-stat">🗡️{{ content.field_power.0 }} :</span>
+        {% set power_level = (node.field_power.value / 20) | round %} {# Assuming max 200 #}
+      {% for i in 1..10 %}
+    <span class="meter-block {{ i <= power_level ? 'active' : '' }}"></span>
+  {% endfor %}
+</div>
+      </div> 
+    </div> 
+  </header>
+
+  <div class="pokedex-main-content">
+    {# Left Side: Sprite #}
+    <div class="pokedex-visuals">
+      <div class="sprite-display">
+        {{ content.field_sprite }}
+      </div>
+    </div>
+
+    {# Right Side: Data Table #}
+    <div class="pokedex-data-table">
+      <div class="table-header">Pokémon Details</div>
+      
+   <div class="data-row">
+  <span class="data-label">Type</span>
+  <span class="data-value type-cell-container">
+    {% for item in content.field_pokemon_type['#items'] %}
+      {% set type_name = item.entity.label|lower %}
+      <div class="type-full-section type-{{ type_name }}">
+        {# The symbol cell #}
+        <div class="symbol-badge">
+          <span class="type-icon"></span>
+        </div>
+        {# The centered text #}
+        <span class="type-text">{{ item.entity.label }}</span>
+      </div>
+    {% endfor %}
+  </span>
+</div>
+      <div class="data-row">
+        <span class="data-label">Height</span>
+        <span class="data-value">{{ content.field_height.0 }}</span>
+      </div>
+<div class="data-row description-row">
+  <div class="description-content">
+    <div class="description-symbol">
+    </div>
+    
+    <div class="description-text">
+      {{ content.field_description.0 }}
+    </div>
+  </div>
+</div>
+ <div class="evo-buttons-row">
+
+ {# This part of the code is the evolution with changed url aliases into pokemon names #}
+    {# Button for Pre-Evolution #}
+    <div class="evolution-section">
+  <div class="evo-label">Evolution Chain⛓️‍💥:</div>
+  <div class="evo-buttons-row">
+  {% if node.field_evolves_from.value %}
+    <a href="/{{ node.field_evolves_from.value|lower }}" class="evo-btn">
+      ⬅️ {{ node.field_evolves_from.value }}
+    </a>
+  {% endif %}
+
+  {# Button for Next Evolution #}
+  {% if node.field_evolves_into.value %}
+    <a href="/{{ node.field_evolves_into.value|lower }}" class="evo-btn">
+      {{ node.field_evolves_into.value }} ➡️
+    </a>
+  {% endif %}
+</div>
+      {# Hidden technical metadata #}
+      <div class="hidden-fields" style="display:none;">
+        {{ content|without('field_id', 'field_hp', 'field_power', 'field_sprite', 'field_pokemon_type', 'field_height') }}
+      </div>
+    </div>
+  </div>
+</article>
