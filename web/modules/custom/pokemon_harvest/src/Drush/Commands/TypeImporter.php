@@ -53,7 +53,7 @@ class TypeImporter extends DrushCommands {
         $terms_to_create = [
             'Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fighting', 
         'Fire', 'Flying', 'Ghost', 'Ice', 'Normal', 'Poison', 
-        'Psychic', 'Rock', 'Steel', 'Water', 'Grass',
+        'Psychic', 'Rock', 'Steel', 'Water', 'Grass', 'Ground'
         ];
         $storage = $this->entityTypeManager->getStorage('taxonomy_term');
 
