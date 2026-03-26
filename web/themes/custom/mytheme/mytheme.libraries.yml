@@ -1,5 +1,6 @@
 global-styling:
   css:
     theme:
-      css/style.css: {}
+      css/nodeStyle.css: {}
       css_final_Pokedex/pokedexSpecial.css: {}
+      
