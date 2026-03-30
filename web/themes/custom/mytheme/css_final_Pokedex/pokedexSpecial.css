@@ -4,10 +4,10 @@
     color: rgba(194, 159, 58); 
 }
 .main-content__container {
-    background-color: #4b5050;
+    background-color: #35393C;
 }
 .region--content { 
-    background-color: #4b5050;
+    background-color: #35393C;
 }
 
 .view-header h2 { 
@@ -20,17 +20,79 @@
     
     /* --- Text Outline Settings --- */
     -webkit-text-stroke: 3px rgba(27, 95, 223, 0.8); /* Width and Color */
-   
+}
+/*Filtering tool css*/
+.pokedex-special .form-item__label {
+  color:white;
+  text-align: left;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: lighter;
+}
+
+.pokedex-special .views-exposed-form {
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  flex: 1; /* Allows inputs to share the available space equally */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.pokedex-special .form-item__label {
+  color: #feffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+.pokedex-special .form--inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; /* Forces items to stay on one line */
+  align-items: flex-end; /* Aligns the button with the bottom of the inputs */
+  gap: 10px; /* Space between the items */
+  width: 100%;
+}
+
+/* Individual wrappers for each input/label */
+.pokedex-special .js-form-item {
+  margin: 0;
+  flex: 1; /* Allows inputs to grow and share space */
+}
+
+/* Adjusting your specific input styles */
+.pokedex-special .form-text,
+.pokedex-special input.form-autocomplete {
+  padding: 10px 12px;
+  border-radius: 5px;
+  background-color: #f7f4f4;
+  width: 100% !important; /* Overriding your 60%/30% widths to fill flex space */
+  height: 40px; /* Increased height so it's actually visible and clickable */
+  box-sizing: border-box;
+}
+
+/* The Apply Button */
+.pokedex-special .button--primary {
+  flex: 0 0 auto; /* Keeps the button from stretching */
+  height: 52px; /* Must match input height */
+  margin: 0;
+  background-color: #5DA399;
+  border-color:  #5DA399;
+}
+ .pokedex-special .button--primary:hover {
+  background-color: #7ac2b7;
+}
+.pokedex-special .form-text:focus {
+  border-color: #f5f5f5;
+  outline: none;
+  box-shadow: 0 0 10px rgba(136, 231, 203, 0.5);
 }
 .pokedex-special .views-view-responsive-grid__item  {
     position: relative;
      font-size: 1.4rem;
-    background-color: #cfc7c7;
     text-align: center;
     /* 1. Make the container bigger by increasing padding */
     padding: 20px 10px; /* Top/Bottom, Left/Right */
-    border-top: 3px solid rgb(77, 76, 76);
-    border-bottom: 3px solid rgb(73, 72, 72);
     border-radius: 10px;
     box-shadow: 0 15px 25px 2px rgba(10, 10, 10, 0.6);
     margin-bottom: 25px;
@@ -66,89 +128,94 @@
 /* Grass */
 .pokedex-special .views-view-responsive-grid__item:has(.type-grass) {
     background: linear-gradient(145deg, #a7db8d, #78C850) !important;
-    border-top-color: #5ca935;
+    border-top-color: #5899E2;
 }
 
 /* Fire */
 .pokedex-special .views-view-responsive-grid__item:has(.type-fire) {
     background: linear-gradient(145deg, #f5ac78, #F08030) !important;
-    border-top-color: #c4601a;
+    border-top-color: #5899E2;
 }
 
 /* Water */
 .pokedex-special .views-view-responsive-grid__item:has(.type-water) {
     background: linear-gradient(145deg, #a2baf3, #406acc) !important;
-    border-top-color: #4a6ec2;
+    border-top-color: #5899E2;
 }
 
 /* Bug */
 .pokedex-special .views-view-responsive-grid__item:has(.type-bug) {
     background: linear-gradient(145deg, #c6d16e, #A8B820) !important;
-    border-top-color: #828f1a;
+    border-top-color: #5899E2;
 }
 
 /* Poison */
 .pokedex-special .views-view-responsive-grid__item:has(.type-poison) {
     background: linear-gradient(145deg, #c183c1, #A040A0) !important;
-    border-top-color: #803380;
+    border-top-color: #5899E2;
 }
 
 /* Electric */
 .pokedex-special .views-view-responsive-grid__item:has(.type-electric) {
     background: linear-gradient(145deg, #fff2bf, #f8cd22) !important;
-    border-top-color: #c1a11a;
+    border-top-color: #5899E2;
 }
 
 /* Ground */
 .pokedex-special .views-view-responsive-grid__item:has(.type-ground) {
     background: linear-gradient(145deg, #f8e1a0, #a3883f) !important;
-    border-top-color: #b39a53;
+    border-top-color: #5899E2;
 }
 
 /* Psychic */
 .pokedex-special .views-view-responsive-grid__item:has(.type-psychic) {
     background: linear-gradient(145deg, #f0b5c7, #f14e7f) !important;
-    border-top-color: #c1456a;
+    border-top-color: #5899E2;
 }
 
 /* Rock */
 .pokedex-special .views-view-responsive-grid__item:has(.type-rock) {
     background: linear-gradient(145deg, #dddddb, #5e5d5a) !important;
-    border-top-color: #8f7d2b;
+    border-top-color: #5899E2;
 }
 
 /* Ghost */
 .pokedex-special .views-view-responsive-grid__item:has(.type-ghost) {
-    background: linear-gradient(145deg, #a292bc, #705898) !important;
-    border-top-color: #554374;
+    background: linear-gradient(145deg, #d6d3db, #aea9b6) !important;
+    border-top-color: #5899E2;
 }
 /*flying*/
 .pokedex-special .views-view-responsive-grid__item:has(.type-flying) {
     background: linear-gradient(145deg, #c4f8fc, #33dbf8) !important;
-    border-top-color: #554374;
+    border-top-color: #5899E2;
 }
 /*flying*/
 .pokedex-special .views-view-responsive-grid__item:has(.type-fairy) {
     background: linear-gradient(145deg, #f2a2f5, #f757e9) !important;
-    border-top-color: #554374;
+    border-top-color: #5899E2;
 }
 
 /* Ice */
 .pokedex-special .views-view-responsive-grid__item:has(.type-ice) {
     background: linear-gradient(145deg, #bce6e6, #98D8D8) !important;
-    border-top-color: #76a8a8;
+    border-top-color: #5899E2;
 }
 
 /* Dragon */
 .pokedex-special .views-view-responsive-grid__item:has(.type-dragon) {
-    background: linear-gradient(145deg, #a27dfa, #7038F8) !important;
-    border-top-color: #552bb3;
+    background: linear-gradient(145deg, #eeb53b, #f88a23) !important;
+    border-top-color: #5899E2;
 }
 
 /* Normal */
 .pokedex-special .views-view-responsive-grid__item:has(.type-normal) {
     background: linear-gradient(145deg, #c6c6a7, #A8A878) !important;
-    border-top-color: #82825d;
+    border-top-color: #5899E2;
+}
+/* Normal */
+.pokedex-special .views-view-responsive-grid__item:has(.type-fighting) {
+    background: linear-gradient(145deg, #d19b94, #a76969) !important;
+    border-top-color: #5899E2;
 }
 /* --- Card Content --- */
 .pokedex-special .views-field-field-id { 
@@ -184,8 +251,6 @@
     font-size: clamp(0.65rem, 1.8vw, 1.0rem);
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-
-    /* --- The Fixes --- */
     white-space: nowrap;  /* Forces text to stay on one line */
     overflow: visible;    /* Ensures text doesn't vanish if it hits the edge */
 }
