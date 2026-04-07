@@ -255,6 +255,67 @@
     overflow: visible;    /* Ensures text doesn't vanish if it hits the edge */
 }
 
+/*css for the export buttons*/
+.csv-feed .feed-icon,
+.json-feed .feed-icon,
+.views-data-export-feed .feed-icon {
+  text-indent: 0 !important;        
+  overflow: visible !important;      
+  width: auto !important;          
+  height: auto !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  background-image: none !important; 
+}
+
+/* 2. Style the links */
+.json-feed a, 
+.csv-feed a {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px !important;
+  border-radius: 8px;
+  text-decoration: none !important;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  background-image: none !important; 
+  transition: all 0.3s ease;
+  min-width: 130px; /* Gives space for the label */
+  box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+}
+
+
+.json-feed a::before, 
+.csv-feed a::before {
+  content: '⤓'; 
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+/* 5. The Colors */
+.json-feed a {
+  background-color: #98fb98 !important; /* Mint */
+  color: #1b4d3e !important;
+  border: 2px solid #76d676;
+}
+
+.csv-feed a {
+  background-color: #f5f5dc !important; /* Cream */
+  color: #1b4d3e !important;
+  border: 2px solid #d2d2b4;
+}
+
+/* 6. Hover state - subtle lift */
+.json-feed a:hover, 
+.csv-feed a:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.1);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.2);
+}
 /* --- Responsive Adjustments --- */
 
 /* Tablet & Desktop */
