@@ -2,16 +2,13 @@
   <h1 class="pokedex-main-title">Jaime's Pokedex</h1>
 
   <header class="pokedex-interface-bar">
-    {# This is the master horizontal track #}
     <div class="pokedex-master-row">
       
       {% if exposed %}
-        {# The form lives here (Inputs + Search Button) #}
         {{ exposed }}
       {% endif %}
 
       {% if header %}
-        {# Your Global Text Area (CSV/JSON) lives here #}
         <div class="pokedex-header-buttons">
           {{ header }}
         </div>

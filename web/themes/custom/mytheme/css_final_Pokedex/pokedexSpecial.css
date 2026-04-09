@@ -67,8 +67,6 @@
     transition: transform 0.3s ease; /* Smooth transition for the hover effect below */
     filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3)); /* Adds depth to the Pokémon */
 }
-
-/* Optional: Add a slight zoom effect when hovering over the card */
 .pokedex-special .views-view-responsive-grid__item:hover img {
     transform: scale(1.3);
 }
@@ -101,9 +99,9 @@
 .pokedex-master-row {
   display: flex !important;
   flex-direction: row !important;
-  flex-wrap: nowrap !important; /* ABSOLUTELY NO BENDING/WRAPPING */
+  flex-wrap: nowrap !important;
   justify-content: center !important;
-  align-items: flex-end !important; /* Bottom-aligns everything */
+  align-items: flex-end !important; 
   gap: 12px !important;
   width: 100% !important;
 }
@@ -123,7 +121,6 @@
   box-shadow: 0 0 10px rgba(93,163,153,0.5);
 
 }
-/* --- Force the Drupal Form to be a small horizontal piece --- */
 .pokedex-special .views-exposed-form,
 .pokedex-special .views-exposed-form form {
   display: flex !important;
@@ -131,14 +128,14 @@
   align-items: flex-end !important;
   gap: 10px !important;
   margin: 0 !important;
-  width: auto !important; /* Stops the form from hogging the whole line */
+  width: auto !important;
 }
 
 /* --- Shrink inputs so they mathematically fit --- */
 .pokedex-special .js-form-item {
   display: flex !important;
   flex-direction: column !important;
-  width: 190px !important; /* Fixed width to prevent row overflow */
+  width: 190px !important;
   margin: 0 !important;
 }
 
@@ -162,7 +159,7 @@
   padding: 0 !important;
 }
 
-/* Standardize the look of Search, CSV, and JSON */
+/* Uniform the the look of Search, CSV, and JSON */
 .pokedex-special .pokedex-export-links .export-btn {
   height: 40px !important;
   padding: 0 12px !important;
@@ -197,7 +194,7 @@ height: 54px !important;
   background-color: #5DA399 !important;
   color: white !important;
    background: linear-gradient(135deg, #5DA399, #4a827a);
-  position: relative; /* Required for the effect layers */
+  position: relative;
   transition: all 0.2s ease;
   overflow: hidden;
 }
@@ -211,7 +208,7 @@ height: 54px !important;
 /* Create the glitch layers */
 .pokedex-special .button--primary:hover::before,
 .pokedex-special .button--primary:hover::after {
-  content: 'SEARCH'; /* Match this to your button text */
+  content: 'SEARCH';
   position: absolute;
   top: 0;
   left: 0;
@@ -224,7 +221,7 @@ height: 54px !important;
   opacity: 0.8;
 }
 
-/* Red-shifted layer */
+
 .pokedex-special .button--primary:hover::before {
   left: 2px;
   text-shadow: -2px 0 #ff00c1;
@@ -232,7 +229,7 @@ height: 54px !important;
   animation: glitch-anim 0.2s infinite linear alternate-reverse;
 }
 
-/* Blue-shifted layer */
+
 .pokedex-special .button--primary:hover::after {
   left: -2px;
   text-shadow: -2px 0 #00fff9;
@@ -240,7 +237,7 @@ height: 54px !important;
   animation: glitch-anim 0.3s infinite linear alternate;
 }
 
-/* The "Shaking" Keyframe */
+/*Shaking Keyframe */
 @keyframes glitch-anim {
   0% { clip-path: inset(10% 0 70% 0); transform: translate(-2px, -1px); }
   20% { clip-path: inset(40% 0 20% 0); transform: translate(2px, 1px); }
@@ -253,45 +250,34 @@ height: 54px !important;
     display: flex !important;
     gap: 8px !important;
 }
-/* Your specific CSV/JSON colors */
-/* Shared Styles for Download Chips */
 .pokedex-special .pokedex-export-links .csv-btn,
 .pokedex-special .pokedex-export-links .json-btn {
     position: relative;
     color:white !important;
     border: none;
     padding: 8px 15px;
-    font-family: 'Orbitron', sans-serif; /* Matching your title font */
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.8rem;
     font-weight: bold;
     text-transform: uppercase;
-    /* This creates the "clipped" data-chip corner */
     clip-path: polygon(0 0, 80% 0, 100% 25%, 100% 100%, 0 100%);
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     display: inline-flex;
     align-items: center;
     gap: 5px;
 }
-
-/* CSV Button Specifics */
 .pokedex-special .pokedex-export-links .csv-btn {
     background-color: #4a827a !important;
 }
-
-/* JSON Button Specifics */
 .pokedex-special .pokedex-export-links .json-btn {
     background-color: #4a827a !important;
 }
-
-/* Hover Effect: The "Download Scan" */
 .pokedex-special .pokedex-export-links .csv-btn:hover,
 .pokedex-special .pokedex-export-links .json-btn:hover {
     transform: translateY(-3px);
     filter: brightness(1.2);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
-
-/* Adding a sliding "data transfer" light on hover */
 .pokedex-special .pokedex-export-links .csv-btn::after,
 .pokedex-special .pokedex-export-links .json-btn::after {
     content: '';
@@ -309,13 +295,11 @@ height: 54px !important;
     left: 100%;
     transition: all 0.6s ease;
 }
-
-/* Icon specific sizing */
 .export-btn i {
     font-size: 0.9rem;
 }
 .export-btn {
-    height: 40px !important; /* Match Search button height */
+    height: 40px !important;
     padding: 0 15px !important;
     border-radius: 5px !important;
     font-size: 0.75rem !important;
@@ -340,8 +324,6 @@ height: 54px !important;
 
 
 /* --- DYNAMIC TAXONOMY COLORS --- */
-/* These rules look for the type class you added in the field style settings */
-
 /* Grass */
 .pokedex-special .views-view-responsive-grid__item:has(.type-grass) {
     background: linear-gradient(145deg, #a7db8d, #78C850) !important;
