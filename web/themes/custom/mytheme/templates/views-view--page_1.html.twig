@@ -1,0 +1,21 @@
+<div{{ attributes.addClass(classes) }} class="pokedex-special">
+  <h1 class="pokedex-main-title">Jaime's Pokedex</h1>
+
+  <header class="pokedex-interface-bar">
+    <div class="pokedex-master-row">
+      
+      {% if exposed %}
+        {{ exposed }}
+      {% endif %}
+
+      {% if header %}
+        <div class="pokedex-header-buttons">
+          {{ header }}
+        </div>
+      {% endif %}
+
+    </div>
+  </header>
+  
+  {{ rows }}
+</div>
