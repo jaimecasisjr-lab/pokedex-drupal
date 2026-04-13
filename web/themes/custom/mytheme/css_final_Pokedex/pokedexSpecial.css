@@ -21,71 +21,22 @@
     /* --- Text Outline Settings --- */
     -webkit-text-stroke: 3px rgba(27, 95, 223, 0.8); /* Width and Color */
 }
-/*Filtering tool css*/
-.pokedex-special .form-item__label {
-  color:white;
-  text-align: left;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: lighter;
-}
 
-.pokedex-special .views-exposed-form {
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 25px;
-  flex: 1; /* Allows inputs to share the available space equally */
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.pokedex-special .form-item__label {
-  color: #feffff;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  display: block;
-}
-.pokedex-special .form--inline {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap; /* Forces items to stay on one line */
-  align-items: flex-end; /* Aligns the button with the bottom of the inputs */
-  gap: 10px; /* Space between the items */
-  width: 100%;
-}
-
-/* Individual wrappers for each input/label */
-.pokedex-special .js-form-item {
-  margin: 0;
-  flex: 1; /* Allows inputs to grow and share space */
-}
-
-/* Adjusting your specific input styles */
-.pokedex-special .form-text,
-.pokedex-special input.form-autocomplete {
-  padding: 10px 12px;
-  border-radius: 5px;
-  background-color: #f7f4f4;
-  width: 100% !important; /* Overriding your 60%/30% widths to fill flex space */
-  height: 40px; /* Increased height so it's actually visible and clickable */
-  box-sizing: border-box;
-}
-
-/* The Apply Button */
-.pokedex-special .button--primary {
-  flex: 0 0 auto; /* Keeps the button from stretching */
-  height: 52px; /* Must match input height */
-  margin: 0;
-  background-color: #5DA399;
-  border-color:  #5DA399;
-}
  .pokedex-special .button--primary:hover {
   background-color: #7ac2b7;
 }
+.pokedex-special .form-text {
+  background: #efeff0 !important;
+  color: #1a1919 !important;
+  border: 1px solid #444 !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease;
+}
+
 .pokedex-special .form-text:focus {
-  border-color: #f5f5f5;
+  border-color: #5DA399 !important;
+  box-shadow: 0 0 0 2px rgba(93,163,153,0.3);
   outline: none;
-  box-shadow: 0 0 10px rgba(136, 231, 203, 0.5);
 }
 .pokedex-special .views-view-responsive-grid__item  {
     position: relative;
@@ -116,15 +67,263 @@
     transition: transform 0.3s ease; /* Smooth transition for the hover effect below */
     filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3)); /* Adds depth to the Pokémon */
 }
-
-/* Optional: Add a slight zoom effect when hovering over the card */
 .pokedex-special .views-view-responsive-grid__item:hover img {
     transform: scale(1.3);
 }
+.pokedex-main-title {
+  color: #ffffff;
+  font-size: 2.5rem; /* Increased size for impact */
+  font-weight: 900;
+  margin-bottom: 24px;
+  
+  /* Text Alignment */
+  text-align: center;
+  width: 100%;
+  display: block;
+
+  /* Futuristic Stylings */
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: 'Orbitron', 'Trebuchet MS', sans-serif; /* Spiky/Modern font stack */
+  
+  /* The "Spiky" Glow Effect */
+  text-shadow: 
+    2px 2px 0px #16979e, /* Cyan sharp offset */
+    -1px -1px 0px #ff00de, /* Magenta sharp offset */
+    0 0 10px rgba(255, 255, 255, 0.5);
+    
+  /* Subtle tilt for a "HUD" feel */
+  transform: skewX(-5deg);
+}
+/* --- Master Row Setup --- */
+.pokedex-master-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
+  align-items: flex-end !important; 
+  gap: 12px !important;
+  width: 100% !important;
+}
+.pokedex-interface-bar {
+  background: 
+    linear-gradient(rgba(58, 63, 68, 0.85), rgba(58, 63, 68, 0.85)),
+    url('/modules/custom/pokemon_harvest/images/pokemon_BG/pokeball-bg-view.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 12px 16px;
+  border-radius: 3px;
+  margin-bottom: 100px;
+  border: 2px solid #489194;
+  box-shadow: 0 0 10px rgba(93,163,153,0.5);
+
+}
+.pokedex-special .views-exposed-form,
+.pokedex-special .views-exposed-form form {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  width: auto !important;
+}
+
+/* --- Shrink inputs so they mathematically fit --- */
+.pokedex-special .js-form-item {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 190px !important;
+  margin: 0 !important;
+}
+
+.pokedex-special .form-item__label {
+  color: #feffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+/* --- Buttons & Links (Search, CSV, JSON) --- */
+.pokedex-special .form-actions,
+.pokedex-header-buttons,
+.pokedex-export-links {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Uniform the the look of Search, CSV, and JSON */
+.pokedex-special .pokedex-export-links .export-btn {
+  height: 40px !important;
+  padding: 0 12px !important;
+  border-radius: 5px !important;
+  font-size: 0.75rem !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  border: none !important;
+}
+.pokedex-special .button--primary {
+height: 54px !important;
+  padding: 0 12px !important;
+  border-radius: 5px !important;
+  font-size: 0.75rem !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  border: none !important;
+}
+
+/* Base Button Style */
+.pokedex-special .button--primary {
+  background-color: #5DA399 !important;
+  color: white !important;
+   background: linear-gradient(135deg, #5DA399, #4a827a);
+  position: relative;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+/* The Glitch Animation */
+.pokedex-special .button--primary:hover {
+  background-color: #4b8a81 !important; /* Slightly darker on hover */
+  text-shadow: 2px 2px #ff00c1, -2px -2px #00fff9; /* Sharp neon shadow */
+}
+
+/* Create the glitch layers */
+.pokedex-special .button--primary:hover::before,
+.pokedex-special .button--primary:hover::after {
+  content: 'SEARCH';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #5DA399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+
+.pokedex-special .button--primary:hover::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip-path: inset(44% 0 30% 0);
+  animation: glitch-anim 0.2s infinite linear alternate-reverse;
+}
+
+
+.pokedex-special .button--primary:hover::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9;
+  clip-path: inset(10% 0 80% 0);
+  animation: glitch-anim 0.3s infinite linear alternate;
+}
+
+/*Shaking Keyframe */
+@keyframes glitch-anim {
+  0% { clip-path: inset(10% 0 70% 0); transform: translate(-2px, -1px); }
+  20% { clip-path: inset(40% 0 20% 0); transform: translate(2px, 1px); }
+  40% { clip-path: inset(20% 0 50% 0); transform: translate(-1px, 2px); }
+  60% { clip-path: inset(70% 0 10% 0); transform: translate(1px, -2px); }
+  80% { clip-path: inset(50% 0 30% 0); transform: translate(-2px, 1px); }
+  100% { clip-path: inset(15% 0 65% 0); transform: translate(2px, -1px); }
+}
+.pokedex-export-links {
+    display: flex !important;
+    gap: 8px !important;
+}
+.pokedex-special .pokedex-export-links .csv-btn,
+.pokedex-special .pokedex-export-links .json-btn {
+    position: relative;
+    color:white !important;
+    border: none;
+    padding: 8px 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 80% 0, 100% 25%, 100% 100%, 0 100%);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.pokedex-special .pokedex-export-links .csv-btn {
+    background-color: #4a827a !important;
+}
+.pokedex-special .pokedex-export-links .json-btn {
+    background-color: #4a827a !important;
+}
+.pokedex-special .pokedex-export-links .csv-btn:hover,
+.pokedex-special .pokedex-export-links .json-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.pokedex-special .pokedex-export-links .csv-btn::after,
+.pokedex-special .pokedex-export-links .json-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: none;
+}
+
+.pokedex-special .pokedex-export-links .csv-btn:hover::after,
+.pokedex-special .pokedex-export-links .json-btn:hover::after {
+    left: 100%;
+    transition: all 0.6s ease;
+}
+.export-btn i {
+    font-size: 0.9rem;
+}
+.export-btn {
+    height: 40px !important;
+    padding: 0 15px !important;
+    border-radius: 5px !important;
+    font-size: 0.75rem !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px; /* Space between icon and text */
+    transition: all 0.2s ease-in-out;
+    border: none !important;
+    white-space: nowrap !important;
+    cursor: pointer;
+}
+
+ .export-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  transition: 0.2s ease;
+}
+
 
 /* --- DYNAMIC TAXONOMY COLORS --- */
-/* These rules look for the type class you added in the field style settings */
-
 /* Grass */
 .pokedex-special .views-view-responsive-grid__item:has(.type-grass) {
     background: linear-gradient(145deg, #a7db8d, #78C850) !important;
@@ -253,68 +452,6 @@
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     white-space: nowrap;  /* Forces text to stay on one line */
     overflow: visible;    /* Ensures text doesn't vanish if it hits the edge */
-}
-
-/*css for the export buttons*/
-.csv-feed .feed-icon,
-.json-feed .feed-icon,
-.views-data-export-feed .feed-icon {
-  text-indent: 0 !important;        
-  overflow: visible !important;      
-  width: auto !important;          
-  height: auto !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none !important;
-  background-image: none !important; 
-}
-
-/* 2. Style the links */
-.json-feed a, 
-.csv-feed a {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 25px !important;
-  border-radius: 8px;
-  text-decoration: none !important;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  background-image: none !important; 
-  transition: all 0.3s ease;
-  min-width: 130px; /* Gives space for the label */
-  box-shadow: 0 4px 0 rgba(0,0,0,0.2);
-}
-
-
-.json-feed a::before, 
-.csv-feed a::before {
-  content: '⤓'; 
-  margin-right: 8px;
-  font-size: 1.1rem;
-}
-
-/* 5. The Colors */
-.json-feed a {
-  background-color: #98fb98 !important; /* Mint */
-  color: #1b4d3e !important;
-  border: 2px solid #76d676;
-}
-
-.csv-feed a {
-  background-color: #f5f5dc !important; /* Cream */
-  color: #1b4d3e !important;
-  border: 2px solid #d2d2b4;
-}
-
-/* 6. Hover state - subtle lift */
-.json-feed a:hover, 
-.csv-feed a:hover {
-  transform: translateY(-4px);
-  filter: brightness(1.1);
-  box-shadow: 0 6px 0 rgba(0,0,0,0.2);
 }
 /* --- Responsive Adjustments --- */
 
