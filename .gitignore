@@ -1,5 +1,21 @@
+# Ignore the vendor directory (Composer handles this)
+/vendor/
 
-/web/sites/*/files/css/
-/web/sites/*/files/php/
-/web/sites/*/files/js/
-/web/sites/*
+# Ignore Drupal's site-specific files and settings
+/web/sites/*/settings.php
+/web/sites/*/settings.local.php
+/web/sites/*/services.yml
+/web/sites/*/files/
+
+# Ignore DDEV configuration (optional, but common)
+.ddev/
+
+# Ignore environment variables and sensitive keys
+.env
+
+# Ignore IDE-specific files (VS Code, etc.)
+.vscode/
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db

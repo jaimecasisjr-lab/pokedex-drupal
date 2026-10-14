@@ -1,0 +1,24 @@
+# Dependencies and vendor files
+/vendor/
+
+# Drupal core and contributed modules/themes
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+
+# Site-specific files and local settings
+/web/sites/*/files/
+/web/sites/*/settings.local.php
+/web/sites/*/settings.ddev.php
+/web/sites/*/services.local.yml
+
+# DDEV generated files (optional: keep project config, ignore private ddev files)
+.ddev/.dbconf*
+.ddev/db_snapshots/
+.ddev/import-db/
+.ddev/.importdb*
+
+# Operating system files
+.DS_Store
+Thumbs.db

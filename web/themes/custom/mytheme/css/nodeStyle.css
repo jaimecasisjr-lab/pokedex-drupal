@@ -414,4 +414,13 @@ background-position: center; background-repeat: no-repeat; background-blend-mode
   opacity: 0.6;
 }
 
-
+/* This targets the container Drupal automatically puts both buttons into */
+.view-pokedex .data-export-import {
+    background-color: rgba(27, 77, 62, 0.2); /* Subtle Forest Green tint */
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #98fb98; /* Mint border */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
